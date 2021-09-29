@@ -1,0 +1,10 @@
+{% extends 'base-page.html' %}
+
+{% load wagtailcore_tags wagtailimages_tags static i18n %}
+
+
+{% block content %}
+<main class="report-content" data-title="{{ page.title }}">
+{% if page.body %}{% for block in page.body %}{% include_block block %}{% endfor %}{% endif %}
+</main>
+{% endblock content %}

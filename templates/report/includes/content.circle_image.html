@@ -1,0 +1,23 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="d-flex flex-column justify-content-center">
+    {% if value.image %}
+	    <div class="align-self-center" style="margin-top: 3rem; margin-bottom: 5rem;">{% image value.logo original class="logo" %}</div>
+    {% endif %}
+    <div class="case-study-image-container">
+        <div class="image-circle-1" {% if value.background_color %} style="background-color: {{ value.background_color }};"{% endif %}></div>
+        <div class="image-circle-2" {% if value.background_color %} style="background-color: {{ value.background_color }};"{% endif %}></div>
+        <div class="circular-image-landscape align-self-center">
+            {% if value.image %}
+                {% image value.image original class="image" %}
+            {% else %}
+                {% image cover_image original class="image" %}
+            {% endif %}
+	    </div>
+
+        <div class="small-image-circle-1" {% if value.background_color %} style="background-color: {{ value.background_color }}"{% endif %}></div>
+        <div class="small-image-circle-2" {% if value.background_color %} style="background-color: {{ value.background_color }}"{% endif %}></div>
+        <div class="small-image-circle-3" {% if value.background_color %} style="background-color: {{ value.background_color }}"{% endif %}></div>
+        <div class="small-image-circle-4" {% if value.background_color %} style="background-color: {{ value.background_color }}"{% endif %}></div>
+    </div>
+</div>
+

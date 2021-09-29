@@ -1,0 +1,14 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% for block in self %}
+	{% if block.block_type == 'collage' %}
+		<div class="image-container">
+			{% for img in block.value %}
+				<div class="image-{{ forloop.counter }}">
+					{% image img width-400 %}
+				</div>
+			{% endfor %}
+		</div>
+	{% else %}
+		{% include_block block %}
+	{% endif %}
+{% endfor %}

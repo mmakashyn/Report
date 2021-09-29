@@ -1,0 +1,6 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="row">
+	{% for block in self %}
+		<div class="
+				{% if block.block.column_class %}{{ block.block.column_class }}{% else %}col-sm-12 medium-auto{% endif %}">{% include_block block %}</div>{% endfor %}
+</div>

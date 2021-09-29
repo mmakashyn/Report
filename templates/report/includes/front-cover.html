@@ -1,0 +1,33 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags static %}
+
+{% image value.cover_image min-1600x1600 as back_img %}
+{% image value.logo original as logo %}
+
+<link rel="stylesheet" href="{% static 'css/front-cover.css' %}">
+
+
+<div class="position-relative col-sm-12">
+	<div class="cover-img cover-image-height" style="background-image: url('{{ back_img.url }}');">
+        <div class="container">
+            <div class="col-8 cover-media mx-auto row my-auto">
+                <img src="{{ logo.url }}" alt="" class="col-sm-12 col-md-10 col-lg-3">
+                <div class="cover-title col-sm-12 col-lg-9">{{ value.title }}</div>
+            </div>
+        </div>
+	</div>
+	<div class="bottom-panel bottom-panel-height">
+		<div class="container-points">
+			<div class="container point-wrapper">
+				<div class="row gx-5 gy-3 gy-lg-5">
+					{% for block in value.links %}
+						<div class="col-sm-12 col-md-6 col-lg-4">
+							<div class="point block-{{ forloop.counter }}">{% include_block block %}</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

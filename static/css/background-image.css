@@ -1,0 +1,64 @@
+
+.background-media-block h2, .layout-columns h2{
+    border-left: 7px solid rgb(230, 100, 70) !important;
+    padding-left: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+@media (max-width: 576px) {
+    .background-media-block h2, .layout-columns h2 {
+        font-size: 2rem;
+    }
+}
+
+p, h5 {
+    padding-left: 1rem!important;
+    padding-right: 1rem;
+}
+
+.left-column {
+    background: rgba(0, 0, 0, .6);
+    padding-left: 0 !important;
+}
+
+.theses-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    border-bottom: 2px solid;
+}
+
+.cm-green {
+    color: green;
+}
+
+.cm-blue {
+    color: rgb(0, 121, 159);
+}
+
+.cm-light-blue {
+    color: rgb(132, 171, 195);
+}
+
+.cm-red {
+    color: rgb(199, 81, 65);
+}
+
+.cm-orange {
+    color: rgb(223, 160, 135);
+}
+
+.logo {
+
+}
+
+.image {
+    width: auto;
+    height: 100%;
+    margin-left: -50px;
+}

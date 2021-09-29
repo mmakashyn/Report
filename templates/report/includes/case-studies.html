@@ -1,0 +1,37 @@
+{% load wagtailcore_tags wagtailimages_tags static %}
+
+<div id="case-studies" style="position: relative;">
+    <h1 style="position: absolute; color: white; left: 5rem; top: 0.5rem;" class="case_studies_header">Case Studies</h1>
+    {% for page in case_studies %}
+        <div class="case-study vh-100 text-white" style="background-color: {{ page.background_color }}">
+            <div class="container d-flex h-100">
+                <div class="row justify-content-center align-self-center">
+                    {% if forloop.counter0 %}
+                        <div class="col-sm-12 col-lg-12 col-xl-6 col-md-12 p-3">
+                            <div class="person-name">{{ page.person_name }}</div>
+                            <div class="short_description cm-blue">{{ page.description }}</div>
+                            <a class="btn btn-primary float-right expanded mt-5" href="{{ page.url }}">Read more...</a>
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-xl-6 col-md-12">
+                            <div class="ml-2">
+                                {% include "report/includes/content.circle_image.html" with cover_image=page.cover %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col-sm-12 col-lg-12 col-xl-6 col-md-12">
+                            <div class="ml-2">
+                                {% include "report/includes/content.circle_image.html" with cover_image=page.cover %}
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-xl-6 col-md-12 p-3">
+                            <div class="person-name">{{ page.person_name }}</div>
+                            <div class="short_description cm-blue">{{ page.description }}</div>
+                            <a class="btn btn-primary float-right expanded mt-5" href="{{ page.url }}">Read more...</a>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
