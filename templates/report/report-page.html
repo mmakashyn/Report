@@ -2,6 +2,9 @@
 
 {% load wagtailcore_tags wagtailimages_tags static i18n %}
 
+{% block navbar %}
+{% include 'snippets/navbar.html' %}
+{% endblock navbar %}
 
 {% block content %}
 <main class="report-content" data-title="{{ page.title }}">

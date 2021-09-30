@@ -24,20 +24,27 @@ class PageTitleBlock(blocks.StructBlock):
 
 
 class LinkBlock(blocks.StructBlock):
-    '''	StreamField block used to render page titles <h1>
-    '''
+    """	StreamField block used to render page titles <h1>
+    """
     name = blocks.CharBlock(required=True, min_length=1, max_length=100)
-    id = blocks.CharBlock(required=True, max_length=100)
+    page_link = blocks.PageChooserBlock(
+        required=False,
+        label='Page link',
+    )
+    other_link = blocks.CharBlock(
+        required=False,
+        max_length=255,
+        label='URL or ID',
+    )
 
     class Meta:
         template = 'report/includes/content.link-block.html'
 
 
 class FrontCoverBlock(blocks.StructBlock):
-    ''' Cover block which provides a background here image and two content sections.
-    '''
-    cover_image = ImageChooserBlock(icon='picture',
-                              help_text='Image to be used for the background of the cover block')
+    """ Cover block which provides a background here image and two content sections.
+    """
+    cover_image = ImageChooserBlock(icon='picture', help_text='Image to be used for the background of the cover block')
     logo = ImageChooserBlock(icon='picture')
     title = CharBlock()
     links = blocks.StreamBlock([

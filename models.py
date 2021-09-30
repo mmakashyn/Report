@@ -34,7 +34,7 @@ class ReportPage(Page):
 
     template = 'report/report-page.html'
 
-    subpage_types = ['report.CaseStudyPage', 'report.CaseStudyListPage']
+    # subpage_types = ['report.CaseStudyPage', 'report.CaseStudyListPage']
 
     def get_context(self, request):
         context = super().get_context(request)
