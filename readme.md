@@ -2,6 +2,7 @@
 
 ## Changes introduced by GK
 
+### PR 1
 * added .gitignore
 * model modification: in ```content.py```, changed model ```LinkBlock(blocks.StructBlock)```, 
 replacing id with ```other_link``` and adding ```page_link```. This resulted in migration #0002, included in the commit.
@@ -10,6 +11,12 @@ replacing id with ```other_link``` and adding ```page_link```. This resulted in 
 by our own navbar
 * base.css - changed body to .report-content - see comment below
 * removed subpage_types in ReportPage model to allow our other page types under the Report page.
+
+### PR 2
+* Executive summary block - wrong assignment, Title should be Text, Description - RichText; was reverse.
+* Removed ActionCallLinkBlock from use, replaced with LinkBlock - 
+it became useless after I modified LinkBlock to include both Page and URL link fields.
+
 
 ## Comments and requests for changes:
 

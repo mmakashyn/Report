@@ -4,15 +4,6 @@ from wagtail.core.blocks import (
 from wagtail.images.blocks import ImageChooserBlock
 
 
-class ActionCallLinkBlock(blocks.StructBlock):
-    text = blocks.CharBlock(required=False, help_text='Text to be used for the button')
-    url = blocks.URLBlock(help_text='Link URL')
-
-    class Meta:
-        template = 'report/includes/content.action-button.link.html'
-        icon = 'fa-external-link'
-
-
 class PageTitleBlock(blocks.StructBlock):
     '''	StreamField block used to render page titles <h1>
     '''
@@ -65,8 +56,12 @@ class ColumnsContent(blocks.StructBlock):
 
 class ExecutiveSummaryBlock(blocks.StructBlock):
     # Block for creating a executive summary
-    title = RichTextBlock()
-    content = TextBlock()
+    title = TextBlock()
+    text = blocks.RichTextBlock(icon='pilcrow',
+                                features=[
+                                    'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic', 'ol', 'ul', 'hr', 'link',
+                                    'document-link', 'image', 'embed', 'code', 'superscript', 'subscript',
+                                    'blockquote', 'cm_blue', 'cm_orange', 'cm_red', 'cm_green'])
 
     class Meta:
         template = 'report/includes/executive-summary.html'
@@ -111,7 +106,7 @@ class ColumnBlock(AcornColumnBaseBlock):
     logo_and_circle_image = CircleImageBlock()
     person_name = RichTextBlock()
     short_description = RichTextBlock(template='report/includes/content.short_description.html')
-    action_button = ActionCallLinkBlock()
+    action_button = LinkBlock()
     collage = blocks.ListBlock(ImageChooserBlock())
     theses = ThesesBlock()
 
