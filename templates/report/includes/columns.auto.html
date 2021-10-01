@@ -1,6 +1,6 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 <div class="row mx-5 mx-sm-2">
 	{% for block in self %}
-		<div class="{% if forloop.counter == 1 %}left-column{% else %}d-flex flex-column justify-content-around  p-5 s-p-0 vh-100{% endif %}
+		<div class="{% if forloop.counter == 1 %}left-column{% else %}d-flex flex-column justify-content-around  p-5 s-p-0{% endif %}
 				{% if block.block.column_class %}{{ block.block.column_class }}{% else %}col-sm-12 medium-auto{% endif %}">{% include_block block %}</div>{% endfor %}
 </div>
