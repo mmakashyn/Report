@@ -1,0 +1,8 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="container layout-columns-in-numbers">
+	<div class="row mx-3 mx-sm-2">
+	{% for block in self %}
+		<div class="{% if forloop.counter|divisibleby:2%}right-number-column{% else %}left-number-column{% endif %}
+				{% if block.block.column_class %}{{ block.block.column_class }}{% else %}col-sm-12 medium-auto{% endif %}">{% include_block block %}</div>{% endfor %}
+	</div>
+</div>
