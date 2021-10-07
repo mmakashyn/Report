@@ -1,0 +1,16 @@
+{% load wagtailcore_tags wagtailimages_tags static %}
+
+{% image value.image min-1600x1600 as cover_img %}
+
+<link rel="stylesheet" href="{% static 'css/global-impacts.css' %}">
+
+<div class="main-container">
+    <div class="back-img" style="background-image: url('{{ cover_img.url }}');">
+        <div class="bottom-case">
+            <div class="text col-md-8 mt-3 mb-3 mx-auto">
+                {{value.content}}
+            </div>
+
+        </div>
+    </div>
+</div>

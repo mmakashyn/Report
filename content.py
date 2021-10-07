@@ -161,3 +161,24 @@ class CaseStudiesBlock(blocks.StructBlock):
     class Meta:
         icon = 'fa-bars'
         template = 'report/includes/case-studies.html'
+
+
+class GlobalImpactsBlock(blocks.StructBlock):
+    image = ImageChooserBlock()
+    content = RichTextBlock()
+    countries = RichTextBlock()
+
+    class Meta:
+        icon = 'image'
+        template = 'report/includes/global-impacts.html'
+
+
+class GlobalImpactsEarthBlock(blocks.StructBlock):
+    title = RichTextBlock()
+    content_color = RichTextBlock()
+    content = RichTextBlock()
+
+    class Meta:
+        icon = 'image'
+        template = 'report/includes/global-impacts-earth.html'
+

@@ -1,0 +1,33 @@
+.main-container{
+    position:relative;
+    height: 100vh;
+}
+
+.back-img {
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    height: 50vh;
+}
+
+.text {
+    color: #6d2948;
+}
+
+.bottom-case {
+    display: flex;
+    position: absolute;
+    height: 50vh;
+    top: 50%;
+    width: 100%;
+}
+
+.content-color {
+    background-color: #273377;
+    color: white;
+}
+
+.title-impact {
+    border-left: 7px solid #273377;
+}
