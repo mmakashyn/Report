@@ -166,7 +166,7 @@ class CaseStudiesBlock(blocks.StructBlock):
 class GlobalImpactsBlock(blocks.StructBlock):
     image = ImageChooserBlock()
     content = RichTextBlock()
-    countries = RichTextBlock()
+    countries = CharBlock()
 
     class Meta:
         icon = 'image'

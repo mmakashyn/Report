@@ -1,16 +1,22 @@
 {% load wagtailcore_tags wagtailimages_tags static %}
+{% load base %}
 
 {% image value.image min-1600x1600 as cover_img %}
 
 <link rel="stylesheet" href="{% static 'css/global-impacts.css' %}">
 
 <div class="main-container">
-    <div class="back-img" style="background-image: url('{{ cover_img.url }}');">
-        <div class="bottom-case">
-            <div class="text col-md-8 mt-3 mb-3 mx-auto">
-                {{value.content}}
+    <img class="back-img" src="{{ cover_img.url }}"/>
+    <div class="bottom-case">
+        <div class="col-md-8 col-xs-6 mt-3 mb-3 mx-auto">
+            <div class="text">{{value.content}}</div>
+            <div class="container">
+                <div class="row">
+                    {% for country in value.countries|split_by_comma %}
+                    <div class="col-sm-4 col-md-3 col-lg-2 country">{{country}}</div>
+                    {% endfor %}
+                </div>
             </div>
-
         </div>
     </div>
 </div>
