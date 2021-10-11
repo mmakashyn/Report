@@ -173,6 +173,26 @@ class BackgroundImageBlock(blocks.StructBlock):
         template = 'report/includes/content.background.image.html'
 
 
+class DynamicBackgroundMalawiBlock(blocks.StreamBlock):
+    '''	StreamField block that can be used to add content to parallax background blocks
+    '''
+    text = RichTextBlock(
+        required=False,
+        features=['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic', 'ol', 'ul', 'hr', 'link', 'document-link',
+                  'image', 'embed',
+                  'code', 'superscript', 'subscript', 'blockquote'])
+    columns = ColumnsBlock(template='report/includes/content.background-malawi.columns.html')
+
+
+class BackgroundImageMalawiBlock(BackgroundImageBlock):
+    content = DynamicBackgroundMalawiBlock()
+
+    class Meta:
+        icon = 'image'
+        template = 'report/includes/content.background-malawi.image.html'
+
+
+
 class CaseStudiesBlock(blocks.StructBlock):
     class Meta:
         icon = 'fa-bars'
