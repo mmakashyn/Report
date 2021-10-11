@@ -1,0 +1,28 @@
+{% load wagtailcore_tags wagtailimages_tags static %}
+
+<link rel="stylesheet" href="{% static 'css/global-impacts.css' %}">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-xs-8 content mt-3 mb-3 mx-auto">
+            <div class="title-impact">
+                {{ value.title }}
+            </div>
+            <div class="content-color">
+                {{value.content_color}}
+            </div>
+            <div class="content">
+                {{ value.content }}
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div id="earth-col">
+                <div id="element" class="little-earth d-flex aligns-items-center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static '/js/miniature.earth.js' %}"></script>
+<script src="{% static '/js/countries.js' %}"></script>
+<script src="{% static '/js/global-impact.js' %}"></script>

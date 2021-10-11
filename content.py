@@ -165,6 +165,26 @@ class CaseStudiesBlock(blocks.StructBlock):
         template = 'report/includes/case-studies.html'
 
 
+class GlobalImpactsBlock(blocks.StructBlock):
+    image = ImageChooserBlock()
+    content = RichTextBlock()
+    countries = CharBlock()
+
+    class Meta:
+        icon = 'image'
+        template = 'report/includes/global-impacts.html'
+
+
+class GlobalImpactsEarthBlock(blocks.StructBlock):
+    title = RichTextBlock()
+    content_color = RichTextBlock()
+    content = RichTextBlock()
+
+    class Meta:
+        icon = 'image'
+        template = 'report/includes/global-impacts-earth.html'
+
+
 class DynamicBackgroundInNumbersBlock(blocks.StreamBlock):
     '''	StreamField block that can be used to add content to parallax background blocks
     '''
@@ -184,3 +204,4 @@ class InNumbersBlock(blocks.StructBlock):
     class Meta:
         icon = 'image'
         template = 'report/includes/content.in-numbers.image.html'
+

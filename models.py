@@ -9,7 +9,8 @@ from wagtail.core.models import Page
 from wagtail.images.models import Image
 
 from .content import PageTitleBlock, FrontCoverBlock, ColumnsContent, ExecutiveSummaryBlock, BackgroundImageBlock, \
-    ColumnsBlock, CaseStudiesBlock, InNumbersBlock
+    ColumnsBlock, CaseStudiesBlock, GlobalImpactsEarthBlock, GlobalImpactsBlock, InNumbersBlock
+
 
 
 class ReportPage(Page):
@@ -25,6 +26,8 @@ class ReportPage(Page):
         ('executive_summary', ExecutiveSummaryBlock()),
         ('fullwidth_background_image', BackgroundImageBlock()),
         ('case_study', CaseStudiesBlock()),
+        ('global_impacts_earth', GlobalImpactsEarthBlock()),
+        ('global_impacts', GlobalImpactsBlock()),
         ('in_numbers_image', InNumbersBlock()),
         ('columns', ColumnsBlock(template='report/includes/content.columns.block.html')),
     ], null=True)
