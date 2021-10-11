@@ -3,3 +3,52 @@
     font-family: 'Trebuchet MS', sans-serif;
     font-weight: 300;
 }
+
+.background-media-block h2, .layout-columns h2{
+    border-left: 7px solid rgb(230, 100, 70) !important;
+    padding-left: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.half-column-background-yellow {
+    background: linear-gradient(90deg, rgb(195, 175, 75) 50%, #ffffff 50%);
+    height: 100%;
+}
+
+.scholarship-images {
+}
+
+.scholarship-images .scholarship-image {
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    border-radius: 50%;
+}
+
+.scholarship-timeline-container {
+    padding-right: 3rem;
+}
+.scholarship-timeline-container .background-media-block h2, .layout-columns h2 {
+        border-bottom: 1px solid black;
+        border-left: 1px solid black !important;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 0.5rem;
+}
+
+
+.scholarship-timeline-container  h1 {
+        padding: 2rem;
+        padding-right: 5rem;
+        padding-left: 0rem;
+}
+
+
+@media (max-width: 576px) {
+    .scholarship-timeline-container {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}

@@ -1,11 +1,4 @@
 
-.background-media-block h2, .layout-columns h2{
-    border-left: 7px solid rgb(230, 100, 70) !important;
-    padding-left: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-}
 
 @media (max-width: 576px) {
     .background-media-block h2, .layout-columns h2 {

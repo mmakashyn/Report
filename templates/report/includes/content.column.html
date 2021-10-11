@@ -8,6 +8,16 @@
 				</div>
 			{% endfor %}
 		</div>
+    {% elif block.block_type == "scholarship_images_list" %}
+        <div class="half-column-background-yellow" style="padding-top: 5rem;">
+            <div class="scholarship-images image-container">
+                {% for img in block.value %}
+                    {% image img min-400x400 as cover_img %}
+                    <div class="scholarship-image" style="background-image: url('{{ cover_img.url }}'); background-repeat: repeat; background-size: cover; background-position: center; height: 400px; width: 400px;">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
 	{% else %}
 		{% include_block block %}
 	{% endif %}

@@ -100,7 +100,7 @@ class ColumnBlock(AcornColumnBaseBlock):
     '''
     text = blocks.RichTextBlock(icon='pilcrow',
                                 features=[
-                                    'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic', 'ol', 'ul', 'hr', 'link',
+                                    'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic', 'ol', 'ul', 'hr', 'link',
                                     'document-link', 'image', 'embed', 'code', 'superscript', 'subscript',
                                     'blockquote', 'cm_blue', 'cm_orange', 'cm_red', 'cm_green'])
     logo_and_circle_image = CircleImageBlock()
@@ -109,10 +109,24 @@ class ColumnBlock(AcornColumnBaseBlock):
     action_button = LinkBlock()
     collage = blocks.ListBlock(ImageChooserBlock())
     theses = ThesesBlock()
+    scholarship_images_list = blocks.ListBlock(ImageChooserBlock())
 
     class Meta:
         template = 'report/includes/content.column.html'
         icon = 'fa-columns'
+
+
+class ScholarshipsTimelineBlock(blocks.StreamBlock):
+    column4 = ColumnBlock(column_class='col-sm-12 col-md-4')
+    text = RichTextBlock(
+        required=False,
+        features=['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic', 'ol', 'ul', 'hr', 'link', 'document-link',
+                  'image', 'embed',
+                  'code', 'superscript', 'subscript', 'blockquote'])
+
+    class Meta:
+        template = 'report/includes/scholarship-timeline.columns.html'
+
 
 
 class ColumnsBlock(blocks.StreamBlock):
@@ -204,4 +218,3 @@ class InNumbersBlock(blocks.StructBlock):
     class Meta:
         icon = 'image'
         template = 'report/includes/content.in-numbers.image.html'
-
