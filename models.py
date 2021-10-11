@@ -10,7 +10,7 @@ from wagtail.images.models import Image
 
 from .content import PageTitleBlock, FrontCoverBlock, ColumnsContent, ExecutiveSummaryBlock, BackgroundImageBlock, \
     ColumnsBlock, CaseStudiesBlock, GlobalImpactsEarthBlock, GlobalImpactsBlock, InNumbersBlock, \
-    ScholarshipsTimelineBlock
+    ScholarshipsTimelineBlock, FocusMalawiBlock, BackgroundImageMalawiBlock
 
 
 
@@ -31,7 +31,9 @@ class ReportPage(Page):
         ('global_impacts', GlobalImpactsBlock()),
         ('in_numbers_image', InNumbersBlock()),
         ('columns', ColumnsBlock(template='report/includes/content.columns.block.html')),
-        ('scholarship_timeline', ScholarshipsTimelineBlock())
+        ('scholarship_timeline', ScholarshipsTimelineBlock()),
+        ('focus_malawi', FocusMalawiBlock()),
+        ('background_malawi', BackgroundImageMalawiBlock()),
     ], null=True)
 
     content_panels = Page.content_panels + [

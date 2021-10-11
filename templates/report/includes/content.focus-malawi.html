@@ -1,0 +1,28 @@
+{% load wagtailcore_tags wagtailimages_tags static %}
+
+{% image value.right_back_image min-1600x1600 as cover_img %}
+
+<link rel="stylesheet" href="{% static 'css/focus-malawi.css' %}">
+
+
+<div class="con">
+    <div class="row">
+        <div class="col-md-6 col-xs-8 mt-3 mb-3 mx-auto">
+            <div class="main-content">
+                <div class="title-focus">
+                    {{ value.title }}
+                </div>
+                <div class="main-info">
+                    {{ value.main_content }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12 pe-0">
+           <div class="right-back-img" style="background-image: url('{{ cover_img.url }}');">
+               <div class="back-content">
+                   {{ value.back_content }}
+               </div>
+           </div>
+        </div>
+    </div>
+</div>

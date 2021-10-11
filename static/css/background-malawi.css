@@ -1,0 +1,17 @@
+.back-malawi-img{
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+}
+
+.back-malawi{
+    color:white;
+}
+
+.back-malawi h2{
+    border-left: 7px solid #C5AE49;
+    padding-left: 0.5rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
