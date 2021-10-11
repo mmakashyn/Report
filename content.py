@@ -4,15 +4,6 @@ from wagtail.core.blocks import (
 from wagtail.images.blocks import ImageChooserBlock
 
 
-class ActionCallLinkBlock(blocks.StructBlock):
-    text = blocks.CharBlock(required=False, help_text='Text to be used for the button')
-    url = blocks.URLBlock(help_text='Link URL')
-
-    class Meta:
-        template = 'report/includes/content.action-button.link.html'
-        icon = 'fa-external-link'
-
-
 class PageTitleBlock(blocks.StructBlock):
     '''	StreamField block used to render page titles <h1>
     '''
@@ -24,20 +15,27 @@ class PageTitleBlock(blocks.StructBlock):
 
 
 class LinkBlock(blocks.StructBlock):
-    '''	StreamField block used to render page titles <h1>
-    '''
+    """	StreamField block used to render page titles <h1>
+    """
     name = blocks.CharBlock(required=True, min_length=1, max_length=100)
-    id = blocks.CharBlock(required=True, max_length=100)
+    page_link = blocks.PageChooserBlock(
+        required=False,
+        label='Page link',
+    )
+    other_link = blocks.CharBlock(
+        required=False,
+        max_length=255,
+        label='URL or ID',
+    )
 
     class Meta:
         template = 'report/includes/content.link-block.html'
 
 
 class FrontCoverBlock(blocks.StructBlock):
-    ''' Cover block which provides a background here image and two content sections.
-    '''
-    cover_image = ImageChooserBlock(icon='picture',
-                              help_text='Image to be used for the background of the cover block')
+    """ Cover block which provides a background here image and two content sections.
+    """
+    cover_image = ImageChooserBlock(icon='picture', help_text='Image to be used for the background of the cover block')
     logo = ImageChooserBlock(icon='picture')
     title = CharBlock()
     links = blocks.StreamBlock([
@@ -58,8 +56,12 @@ class ColumnsContent(blocks.StructBlock):
 
 class ExecutiveSummaryBlock(blocks.StructBlock):
     # Block for creating a executive summary
-    title = RichTextBlock()
-    content = TextBlock()
+    title = TextBlock()
+    text = blocks.RichTextBlock(icon='pilcrow',
+                                features=[
+                                    'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic', 'ol', 'ul', 'hr', 'link',
+                                    'document-link', 'image', 'embed', 'code', 'superscript', 'subscript',
+                                    'blockquote', 'cm_blue', 'cm_orange', 'cm_red', 'cm_green'])
 
     class Meta:
         template = 'report/includes/executive-summary.html'
@@ -104,7 +106,7 @@ class ColumnBlock(AcornColumnBaseBlock):
     logo_and_circle_image = CircleImageBlock()
     person_name = RichTextBlock()
     short_description = RichTextBlock(template='report/includes/content.short_description.html')
-    action_button = ActionCallLinkBlock()
+    action_button = LinkBlock()
     collage = blocks.ListBlock(ImageChooserBlock())
     theses = ThesesBlock()
 
@@ -181,4 +183,25 @@ class GlobalImpactsEarthBlock(blocks.StructBlock):
     class Meta:
         icon = 'image'
         template = 'report/includes/global-impacts-earth.html'
+
+
+class DynamicBackgroundInNumbersBlock(blocks.StreamBlock):
+    '''	StreamField block that can be used to add content to parallax background blocks
+    '''
+    text = RichTextBlock(
+        required=False,
+        features=['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic', 'ol', 'ul', 'hr', 'link', 'document-link',
+                  'image', 'embed',
+                  'code', 'superscript', 'subscript', 'blockquote'])
+    columns = ColumnsBlock(template='report/includes/content.in-number.columns.html')
+
+
+class InNumbersBlock(blocks.StructBlock):
+    image = ImageChooserBlock(icon='picture')
+    content = DynamicBackgroundInNumbersBlock(
+        required=False, help_text='Web content displayed in the foreground (optional)')
+
+    class Meta:
+        icon = 'image'
+        template = 'report/includes/content.in-numbers.image.html'
 

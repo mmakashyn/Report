@@ -9,7 +9,8 @@ from wagtail.core.models import Page
 from wagtail.images.models import Image
 
 from .content import PageTitleBlock, FrontCoverBlock, ColumnsContent, ExecutiveSummaryBlock, BackgroundImageBlock, \
-    ColumnsBlock, CaseStudiesBlock, GlobalImpactsEarthBlock, GlobalImpactsBlock
+    ColumnsBlock, CaseStudiesBlock, GlobalImpactsEarthBlock, GlobalImpactsBlock, InNumbersBlock
+
 
 
 class ReportPage(Page):
@@ -27,6 +28,7 @@ class ReportPage(Page):
         ('case_study', CaseStudiesBlock()),
         ('global_impacts_earth', GlobalImpactsEarthBlock()),
         ('global_impacts', GlobalImpactsBlock()),
+        ('in_numbers_image', InNumbersBlock()),
         ('columns', ColumnsBlock(template='report/includes/content.columns.block.html')),
     ], null=True)
 
@@ -36,7 +38,7 @@ class ReportPage(Page):
 
     template = 'report/report-page.html'
 
-    subpage_types = ['report.CaseStudyPage', 'report.CaseStudyListPage']
+    # subpage_types = ['report.CaseStudyPage', 'report.CaseStudyListPage']
 
     def get_context(self, request):
         context = super().get_context(request)

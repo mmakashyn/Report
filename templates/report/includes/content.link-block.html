@@ -1,1 +1,2 @@
-<a href="#{{ value.id }}" style="text-decoration: None; color: white;">{{ value.name }}</a>
+{% load wagtailcore_tags %}
+<a href="{% if value.page_link %}{% pageurl value.page_link %}{% else %}{{ value.other_link }}{% endif %}" style="text-decoration: None; color: white;">{{ value.name }}</a>

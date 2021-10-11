@@ -1,12 +1,12 @@
 {% load wagtailcore_tags static %}
 
 <link rel="stylesheet" href="{% static 'css/executive-summary.css' %}">
-
+<a id="intro"></a>
 <div class="container executive-summary mt-5 mb-5">
 	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="title">{{ value.title }}</h1>
 		</div>
-		<div class="col-lg-12 mt-3">{{ value.content }}</div>
+		<div class="col-lg-12 mt-3">{{ value.text | richtext }}</div>
 	</div>
 </div>
