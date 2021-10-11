@@ -29,7 +29,7 @@
 .scholarship-timeline-container {
     padding-right: 3rem;
 }
-.scholarship-timeline-container .background-media-block h2, .layout-columns h2 {
+.scholarship-timeline-container h2 {
         border-bottom: 1px solid black;
         border-left: 1px solid black !important;
         border-radius: 10px;
