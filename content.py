@@ -218,3 +218,25 @@ class InNumbersBlock(blocks.StructBlock):
     class Meta:
         icon = 'image'
         template = 'report/includes/content.in-numbers.image.html'
+
+
+class DynamicBackgroundFocusMalawiBlock(blocks.StreamBlock):
+    '''	StreamField block that can be used to add content to parallax background blocks
+    '''
+    text = RichTextBlock(
+        required=False,
+        features=['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic', 'ol', 'ul', 'hr', 'link', 'document-link',
+                  'image', 'embed',
+                  'code', 'superscript', 'subscript', 'blockquote'])
+    columns = ColumnsBlock(template='report/includes/content.in-number.columns.html')
+
+
+class FocusMalawiBlock(blocks.StructBlock):
+    right_back_image = ImageChooserBlock(icon='picture')
+    title = RichTextBlock()
+    main_content = RichTextBlock()
+    back_content = RichTextBlock()
+
+    class Meta:
+        template = 'report/includes/content.focus-malawi.html'
+
