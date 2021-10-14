@@ -13,12 +13,14 @@
             <div class="scholarship-images image-container">
                 {% for img in block.value %}
                     {% image img min-400x400 as cover_img %}
-                    <div class="scholarship-image" style="background-image: url('{{ cover_img.url }}'); background-repeat: repeat; background-size: cover; background-position: center; height: 400px; width: 400px;">
+                    <div class="scholarship-image" style="background-image: url('{{ cover_img.url }}'); background-repeat: repeat; background-size: cover; background-position: center; ">
                     </div>
                 {% endfor %}
             </div>
         </div>
 	{% else %}
-		{% include_block block %}
+        <div class="scholarship-text-container">
+		    {% include_block block %}
+        </div>
 	{% endif %}
 {% endfor %}

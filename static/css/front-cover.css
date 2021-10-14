@@ -32,6 +32,7 @@ h2 {
 
 .bottom-panel-height {
     height: 15vh;
+    max-height: 8rem;
 }
 
 .bottom-buttons {
@@ -76,6 +77,8 @@ h2 {
     line-height: 4.5rem;
     color: #fff;
     padding-left: 1rem;
+    display: block;
+    text-decoration: none;
 }
 
 @media (max-width: 1400px) {
@@ -87,7 +90,7 @@ h2 {
 
 .container-points {
     position: absolute;
-    bottom: 1rem;
+    bottom: 2rem;
     width: 100%;
 }
 
@@ -109,6 +112,7 @@ h2 {
   .bottom-panel-height  {
     height: initial;
     position: initial;
+    max-height: initial;
   }
   .cover-media  {
     padding-top: 5rem;
@@ -160,9 +164,6 @@ h2 {
   .bottom-panel-height  {
     height: initial;
     position: initial;
-  }
-  .case-study-image-container {
-      margin-left: 6rem;
   }
   .case_studies_header {
     left: 1rem !important;

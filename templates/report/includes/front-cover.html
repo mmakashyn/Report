@@ -23,7 +23,7 @@
 				<div class="row gx-5 gy-3 gy-lg-5">
 					{% for block in value.links %}
 						<div class="col-sm-12 col-md-6 col-lg-4">
-							<div class="point block-{{ forloop.counter }}">{% include_block block %}</div>
+							<a href="{% if block.value.page_link %}{% pageurl block.value.page_link %}{% else %}{{ block.value.other_link }}{% endif %}" class="point block-{{ forloop.counter }}">{% include_block block %}</a>
 						</div>
 					{% endfor %}
 				</div>
