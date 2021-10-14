@@ -17,8 +17,6 @@
     height: 100%;
 }
 
-.report-styles .scholarship-images {
-}
 
 .report-styles .scholarship-images .scholarship-image {
     margin: 0 auto;
@@ -60,4 +58,9 @@
         height: 200px;
         width: 200px;
     }
+}
+
+@media (max-width: 926px) {
+.report-styles .half-column-background-yellow {
+    display: none;
 }
