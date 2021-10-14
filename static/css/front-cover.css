@@ -105,9 +105,24 @@ h2 {
     height: 85vh;
 }
 
+
+@media (max-width: 900px) {
+  .report-styles .cover-media  {
+    padding-top: 7rem;
+  }
+  .report-styles .bottom-panel-height  {
+    height: initial;
+    position: initial;
+  }
+  .report-styles .case_studies_header {
+    left: 1rem !important;
+    top: -1.5rem !important;
+  }
+}
+
 @media (max-width: 576px) {
   .report-styles .cover-image-height {
-    height: 100vh;
+    height: 75vh;
   }
   .report-styles .bottom-panel-height  {
     height: initial;
@@ -155,18 +170,4 @@ h2 {
     .report-styles .s-p-0 {
         padding: 1rem !important;
     }
-}
-
-@media (max-width: 900px) {
-  .report-styles .cover-media  {
-    padding-top: 7rem;
-  }
-  .report-styles .bottom-panel-height  {
-    height: initial;
-    position: initial;
-  }
-  .report-styles .case_studies_header {
-    left: 1rem !important;
-    top: -1.5rem !important;
-  }
 }
