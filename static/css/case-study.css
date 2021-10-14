@@ -1,23 +1,23 @@
-#case-studies h1 {
+.report-styles #case-studies h1 {
     border-left: 7px solid rgb(1 132 183);
     padding-left: 1rem;
     margin-top: 3rem;
 }
 
-.case-study h2 {
+.report-styles .case-study h2 {
     margin-bottom: 3rem;
     padding-left: 1rem;
     margin-top: 2rem;
 }
 
-.person-name {
+.report-styles .person-name {
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
     margin-top: 1rem;
 }
 
 
-.case-study .btn {
+.report-styles .case-study .btn {
     float: right;
     border-radius: 0 !important;
     padding-right: 3rem;
@@ -29,12 +29,12 @@
     border-top: 0;
 }
 
-.case-study .short_description p {
+.report-styles .case-study .short_description p {
     color: rgb(1 132 183);
     font-size: 1.5rem;
 }
 
-.case-study .image-container {
+.report-styles .case-study .image-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -48,59 +48,59 @@
     height: 80vh;
 }
 
-.case-study .image-1 {
+.report-styles .case-study .image-1 {
     grid-area: image-1;
     overflow: hidden;
 }
 
-.case-study .image-2 {
+.report-styles .case-study .image-2 {
     grid-area: image-2;
     overflow: hidden;
 }
 
-.case-study .image-3 {
+.report-styles .case-study .image-3 {
     grid-area: image-3;
     overflow: hidden;
 }
 
-.case-study .image-4 {
+.report-styles .case-study .image-4 {
     grid-area: image-4;
     overflow: hidden;
 }
 
-.case-study .image-container img {
+.report-styles .case-study .image-container img {
     height: 100%;
     width: 100%;
 }
 
-.case-study-image-container {
+.report-styles .case-study-image-container {
     position: relative;
     margin-left: 3rem;
 }
 
-.case-study-image-container .image-circle-1 {
+.report-styles .case-study-image-container .image-circle-1 {
     position: absolute; top: -2rem; left: -2rem; height: 450px; width: 450px; background-color: rgb(8, 52, 113); border-radius: 50%;
     opacity: 0.5;
 }
-.case-study-image-container .image-circle-2 {
+.report-styles .case-study-image-container .image-circle-2 {
     position: absolute; top: 1rem; left: 3em; height: 450px; width: 450px; background-color: rgb(8, 52, 113);border-radius: 50%;
     opacity: 0.8;
 }
 
-.case-study-image-container .small-image-circle-1 {
+.report-styles .case-study-image-container .small-image-circle-1 {
     position: absolute; bottom: 4rem; left: 3rem; height: 1.5rem; width: 1.5rem; background-color: rgb(0, 121, 159); border-radius: 50%;
 }
-.case-study-image-container .small-image-circle-2 {
+.report-styles .case-study-image-container .small-image-circle-2 {
     position: absolute; bottom: 2rem; left: 5rem; height: 2rem; width: 2rem; background-color: rgb(0, 121, 159); border-radius: 50%;
 }
-.case-study-image-container .small-image-circle-3 {
+.report-styles .case-study-image-container .small-image-circle-3 {
     position: absolute; bottom: 0.2rem; left: 7.5rem; height: 2.5rem; width: 2.5rem; background-color: rgb(0, 121, 159); border-radius: 50%;
 }
-.case-study-image-container .small-image-circle-4 {
+.report-styles .case-study-image-container .small-image-circle-4 {
     position: absolute; bottom: -1rem; left: 12rem; height: 3rem; width: 3rem; background-color: rgb(0, 121, 159); border-radius: 50%;
 }
 
-.circular-image-landscape {
+.report-styles .circular-image-landscape {
     display: inline-block;
     position: relative;
     width: 450px;
@@ -110,54 +110,54 @@
 }
 
 @media (max-width: 1024px) {
-    .case_studies_header {
+    .report-styles .case_studies_header {
         display: None;
     }
-    .case-study {
+    .report-styles .case-study {
         height: initial !important;
     }
-    .case-study-image-container {
+    .report-styles .case-study-image-container {
         margin-top: 3rem;
         margin-bottom: 2rem;
     }
-    .circular-image-landscape {
+    .report-styles .circular-image-landscape {
         width: 250px;
         height: 250px;
     }
-    .case-study-image-container .image-circle-1 {
+    .report-styles .case-study-image-container .image-circle-1 {
         top: -1rem;
         left: -1rem;
         height: 250px;
         width: 250px;
     }
-    .case-study-image-container .image-circle-2 {
+    .report-styles .case-study-image-container .image-circle-2 {
         top: 1rem;
         left: 1rem;
         height: 250px;
         width: 250px;
     }
-    .case-study-image-container .small-image-circle-1 {
+    .report-styles .case-study-image-container .small-image-circle-1 {
         left: 0rem;
         bottom: 4.5rem;
     }
-    .case-study-image-container .small-image-circle-2 {
+    .report-styles .case-study-image-container .small-image-circle-2 {
         bottom: 2rem;
         left: 1rem;
     }
-    .case-study-image-container .small-image-circle-3 {
+    .report-styles .case-study-image-container .small-image-circle-3 {
         bottom: 0rem;
         left: 3.5rem;
     }
-    .case-study-image-container .small-image-circle-4 {
+    .report-styles .case-study-image-container .small-image-circle-4 {
         left: 7rem;
     }
-    .case-study-block-auto {
+    .report-styles .case-study-block-auto {
         margin: 0px !important;
     }
 }
 
 @media (max-width: 325px) {
-    .case-study-image-container {
+    .report-styles .case-study-image-container {
         margin: 1.5rem;
     }
 }

@@ -7,7 +7,7 @@
 {% endblock navbar %}
 
 {% block content %}
-<main class="report-content" data-title="{{ page.title }}">
+<main class="report-content report-styles" data-title="{{ page.title }}">
 {% if page.body %}{% for block in page.body %}{% include_block block %}{% endfor %}{% endif %}
 </main>
 {% endblock content %}

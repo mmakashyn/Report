@@ -61,17 +61,17 @@ h2 {
     background: linear-gradient(90deg, rgba(44,44,61,0.8141631652661064) 6%, rgba(7,33,46,1) 57%, rgba(6,21,54,1) 98%);
 }
 
-.block-5 {
+.report-styles .block-5 {
     border-top: 0.6em solid #086e3d;
     background: linear-gradient(90deg, rgba(44,44,61,0.8141631652661064) 6%, rgba(7,33,46,1) 57%, rgba(6,21,54,1) 98%);
 }
 
-.block-6 {
+.report-styles .block-6 {
     border-top: 0.6em solid #89593a;
     background: linear-gradient(90deg, rgba(44,44,61,0.8141631652661064) 6%, rgba(7,33,46,1) 57%, rgba(6,21,54,1) 98%);
 }
 
-.point{
+.report-styles .point{
     height: 7rem;
     font-size: 1.5rem;
     line-height: 4.5rem;
@@ -82,46 +82,46 @@ h2 {
 }
 
 @media (max-width: 1400px) {
-  .point {
+  .report-styles .point {
       padding-top: 1.5rem;
       line-height: 2rem;
   }
 }
 
-.container-points {
+.report-styles .container-points {
     position: absolute;
     bottom: 2rem;
     width: 100%;
 }
 
 @media (max-width: 992px) {
-    .container-points {
+    .report-styles .container-points {
         position: relative;
         padding-top: 3rem;
     }
 }
 
-.cover-image-height {
+.report-styles .cover-image-height {
     height: 85vh;
 }
 
 @media (max-width: 576px) {
-  .cover-image-height {
+  .report-styles .cover-image-height {
     height: 100vh;
   }
-  .bottom-panel-height  {
+  .report-styles .bottom-panel-height  {
     height: initial;
     position: initial;
     max-height: initial;
   }
-  .cover-media  {
+  .report-styles .cover-media  {
     padding-top: 5rem;
   }
-  .case-study-image-container {
+  .report-styles .case-study-image-container {
       margin-left: 3rem;
   }
 
-  .cover-title {
+  .report-styles .cover-title {
     color: white;
     font-weight: 500;
     font-size: 2.5rem;
@@ -131,41 +131,41 @@ h2 {
     text-align: center;
   }
 
-  h2 {
+  .report-styles h2 {
       font-size: 2rem;
   }
 
-  .mx-sm-2 {
+  .report-styles .mx-sm-2 {
       margin-left: 0.3rem !important;
       margin-right: 0.3rem !important;
   }
 }
 
 @media (max-width: 325px) {
-    h2 {
+    .report-styles h2 {
        font-size: 1.5rem;
     }
 
-    .theses-title {
+    .report-styles .theses-title {
         font-size: 2rem !important;
     }
-    .subtitle {
+    .report-styles .subtitle {
         font-size: 1rem !important;
     }
-    .s-p-0 {
+    .report-styles .s-p-0 {
         padding: 1rem !important;
     }
 }
 
 @media (max-width: 900px) {
-  .cover-media  {
+  .report-styles .cover-media  {
     padding-top: 7rem;
   }
-  .bottom-panel-height  {
+  .report-styles .bottom-panel-height  {
     height: initial;
     position: initial;
   }
-  .case_studies_header {
+  .report-styles .case_studies_header {
     left: 1rem !important;
     top: -1.5rem !important;
   }

@@ -1,8 +1,8 @@
-.title{
+.report-styles .title{
     border-left: 7px solid #ff0000;
     padding-left: 0.5rem;
 }
 
-.executive-summary {
+.report-styles .executive-summary {
     min-height: 40vh;
 }

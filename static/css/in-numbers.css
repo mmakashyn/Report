@@ -1,26 +1,26 @@
-.back-img{
+.report-styles .back-img{
     background-position: center;
     background-size: cover;
     top: 0;
     left: 0;
 }
 
-.in-numbers {
+.report-styles .in-numbers {
     color: white;
 }
 
-.in-numbers .left-number-column{
+.report-styles .in-numbers .left-number-column{
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
-.in-numbers .left-number-column p{
+.report-styles .in-numbers .left-number-column p{
         border-right: solid;
         border-bottom: solid;
         border-radius: 30px 0;
     }
 
-.in-numbers .right-number-column{
+.report-styles .in-numbers .right-number-column{
         border-left: solid;
         border-bottom: solid;
         border-radius: 0 30px;
@@ -28,14 +28,14 @@
         margin-bottom: 2.5rem;
     }
 
-.in-numbers h2, .layout-columns-in-numbers h2{
+.report-styles .in-numbers h2, .layout-columns-in-numbers h2{
     margin-top: 1.5rem;
     margin-bottom: 3rem;
     font-size: 2.5rem;
     padding-left: 1rem
 }
 
-p, h5 {
+.report-styles p, h5 {
     padding-left: 1rem!important;
     padding-right: 1rem;
     padding-top: 1rem;

@@ -1,15 +1,15 @@
-.back-malawi-img{
+.report-styles .back-malawi-img{
     background-size: cover;
     background-position: center;
     top: 0;
     left: 0;
 }
 
-.back-malawi{
+.report-styles .back-malawi{
     color:white;
 }
 
-.back-malawi h2{
+.report-styles .back-malawi h2{
     border-left: 7px solid #C5AE49;
     padding-left: 0.5rem;
     margin-bottom: 4rem;

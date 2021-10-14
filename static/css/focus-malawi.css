@@ -1,19 +1,19 @@
-.title-focus {
+.report-styles .title-focus {
     border-left: 7px solid #C5AE49;
     padding-left: 1rem;
     margin-top: 3rem;
     margin-bottom: 4rem;
 }
 
-.main-content{
+.report-styles .main-content{
     padding-left: 2.5rem;
 }
 
-.main-info h4{
+.report-styles .main-info h4{
     color: #C5AE49;
 }
 
-.right-back-img{
+.report-styles .right-back-img{
     background-position: center;
     background-size: cover;
     top: 0;
@@ -24,19 +24,19 @@
 }
 
 @media (max-width: 576px) {
-    .right-back-img {
+    .report-styles .right-back-img {
         height:100vh;
         right: 0 !important;
     }
-    .back-content{
+    .report-styles .back-content{
         font-size:1rem;
     }
-    .main-content{
+    .report-styles .main-content{
         padding-left: 1rem;
     }
 }
 
-.back-content{
+.report-styles .back-content{
     color: white;
     position: absolute;
     bottom: 2%;

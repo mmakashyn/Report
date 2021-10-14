@@ -1,9 +1,9 @@
-.main-container{
+.report-styles .main-container{
     position:relative;
     height: 100vh;
 }
 
-.back-img {
+.report-styles .back-img {
     background-position: center;
     background-size: cover;
     top: 0;
@@ -12,26 +12,26 @@
     width: 100%;
 }
 
-.text {
+.report-styles .text {
     color: #6d2948;
     text-align: center;
 }
 
-.bottom-case {
+.report-styles .bottom-case {
     display: flex;
     width: 100%;
 }
 
-.content-color {
+.report-styles .content-color {
     background-color: #273377;
     color: white;
 }
 
-.title-impact {
+.report-styles .title-impact {
     border-left: 7px solid #273377;
 }
 
-.country {
+.report-styles .country {
     border-right: 3px solid #6d2948;
     text-align: center;
     margin-bottom: 1rem;
