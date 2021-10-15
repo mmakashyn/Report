@@ -1,6 +1,5 @@
 .report-styles .main-container{
-    position:relative;
-    height: 100vh;
+    height: 100%;
 }
 
 .report-styles .back-img {

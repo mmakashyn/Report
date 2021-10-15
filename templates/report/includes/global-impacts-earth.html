@@ -1,28 +1,262 @@
-{% load wagtailcore_tags wagtailimages_tags static %}
+{% load static i18n wagtailcore_tags %}
 
-<link rel="stylesheet" href="{% static 'css/global-impacts.css' %}">
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-xs-8 content mt-3 mb-3 mx-auto">
-            <div class="title-impact">
-                {{ value.title }}
-            </div>
-            <div class="content-color">
-                {{value.content_color}}
-            </div>
-            <div class="content">
-                {{ value.content }}
-            </div>
-        </div>
-        <div class="col-md-6 col-xs-12">
-            <div id="earth-col">
-                <div id="element" class="little-earth d-flex aligns-items-center"></div>
-            </div>
-        </div>
-    </div>
-</div>
+<link rel="stylesheet" href="{% static 'css/world-trip.css' %}">
 
 <script src="{% static '/js/miniature.earth.js' %}"></script>
-<script src="{% static '/js/countries.js' %}"></script>
-<script src="{% static '/js/global-impact.js' %}"></script>
+
+
+<div id="earth-body" class="row">
+
+<div id="left" class="col-6">
+
+	<section class="global-impact-section"><div>
+		<h1>Global Impacts</h1>
+	</div></section>
+
+	{% for block in self %}
+	{% if block.block_type == 'countries' %}
+        {% include_block block %}
+    {% endif  %}
+    {% endfor %}
+</div><!--left-->
+
+<div id="right" class="col-6">
+	<div id="myearth" class="earth-container"></div>
+</div><!--right-->
+
+</div>
+
+
+<script>
+
+if ( location.protocol == 'file:' ) {
+	alert( 'This demo does not work with the file protocol due to browser security restrictions.' );
+}
+
+
+var myearth, mypin;
+
+var spain, nyc, california, hawaii, japan, thailand, kenia;
+var nycLocation = { lat: 40.689, lng: -74.046 };
+var nearDistance = 22;
+var activeMarker = false;
+
+
+window.addEventListener( "load", function() {
+
+	myearth = new Earth( document.getElementById('myearth'), {
+
+		location: { lat: 12, lng: -40 },
+		zoom: 0.925,
+		draggable: false,
+		lightAmbience: 0.65,
+		light: 'sun',
+		lightIntensity: 0.55,
+		shininess: 0.12,
+
+		mapSeaColor : '#dfd9d4',
+		mapLandColor : '#765f4f',
+		mapBorderColor : '#d2aa8a',
+		mapBorderWidth : 0.6,
+		{#mapStyles : '#US { fill: red; } #IN { fill: red; } #NP { fill: red; } #NG { fill: red; } #UG { fill: red; } #SE { fill: red; }'#}
+        {% for block in self %}
+        {% if block.block_type == 'countries_list' %}
+        mapStyles: "{{ block.value }}"
+        {% endif  %}
+        {% endfor %}
+	} );
+
+	myearth.addEventListener( "ready", function() {
+
+        document.getElementById("left").addEventListener( 'scroll' , syncScroll );
+
+		// lines
+
+		// spain - nyc
+
+		this.addLine( {
+			locations: [ spain.location, nycLocation ],
+			color : 0xed1717,
+			width: 1.25,
+			offsetFlow: 1,
+			dashed: true,
+			dashSize: 0.4,
+			dashRatio : 0.5,
+			dashOffset : 0.09
+		} );
+
+
+		// nyc - california
+
+		this.addLine( {
+			polyLine: true,
+			locations: [
+				nycLocation,
+				{ lat: 43.091239, lng: -79.1718307 }, // niagara
+				{ lat: 41.6190188, lng: -88.1650261 }, // cicago
+				{ lat: 41.6915624, lng: -99.9371189 }, // nebraska
+				{ lat: 39.7862819, lng: -105.6015808 }, // denver
+				{ lat: 39.0098291, lng: -112.6382665 }, // utah
+				{ lat: 36.185957, lng: -115.4224017 }, // vegas
+				california.location
+			],
+			color : "black",
+			width: 1.25
+		} );
+
+
+		// california - hawaii
+
+		this.addLine( {
+			polyLine: true,
+			locations: [
+				california.location,
+				{lat: 31.163160867378515, lng: -119.50505949419858},
+				{lat: 29.377335348017763, lng: -120.23347044155403},
+				{lat: 27.987920645411283, lng: -120.97509940385386},
+				{lat: 24.818344640116504, lng: -123.7714191048682},
+				{lat: 23.096585391744945, lng: -126.27515241387691},
+				{lat: 21.033975310374625, lng: -129.5042878834362},
+				{lat: 19.518891916312576, lng: -133.2488568815472},
+				{lat: 18.505240294212037, lng: -137.3071707879784},
+				{lat: 17.795533460575584, lng: -143.7123111588744},
+				{lat: 18.0782752401994, lng: -147.03263627747856},
+				{lat: 18.94030015038251, lng: -149.2445920470761},
+				{lat: 20.84908472810411, lng: -152.3034150012591},
+				{lat: 21.653851037350858, lng: -155.1422991629944},
+				hawaii.location
+			],
+			color : 0x3659cd,
+			width: 1.25
+		} );
+
+
+		// hawaii - japan
+
+		this.addLine( {
+			locations: [ hawaii.location, japan.location ],
+			color : 0xed1717,
+			width: 1.25,
+			offsetFlow: 1,
+			dashed: true,
+			dashSize: 0.4,
+			dashRatio : 0.5,
+			dashOffset : 0.105
+		} );
+
+
+		// japan - thailand
+
+		this.addLine( {
+			polyLine: true,
+			locations: [
+				japan.location,
+				{lat: 32.78213447865391, lng: 136.12453232511197},
+				{lat: 30.99334320817764, lng: 132.8916545259063},
+				{lat: 30.04447218420276, lng: 130.3206330641471},
+				{lat: 29.48140910284833, lng: 127.5047189951175},
+				{lat: 27.80128581092784, lng: 122.55283848847692},
+				{lat: 26.162065164801025, lng: 120.97170608269381},
+				{lat: 24.4217894019055, lng: 119.6305602245371},
+				{lat: 23.007116918998207, lng: 117.8398367778564},
+				{lat: 22.42252630391176, lng: 114.39895578860998},
+				{lat: 22.500773152287213, lng: 113.52601819482305},
+				{lat: 21.585517427462356, lng: 113.27384587875595},
+				{lat: 19.67029099563807, lng: 113.24969787432671},
+				{lat: 17.85015961554018, lng: 112.44608934829685},
+				{lat: 14.874583708900815, lng: 111.46353892828185},
+				{lat: 11.308628561204666, lng: 110.27624534701265},
+				{lat: 9.421967600692518, lng: 108.24923243358782},
+				{lat: 7.262476614034991, lng: 106.14183029100957},
+				{lat: 6.929659710099698, lng: 104.295969360431},
+				{lat: 7.463023903932724, lng: 102.28354469453384},
+				{lat: 9.398907542411939, lng: 100.20496026033567},
+				{lat: 10.376634430500824, lng: 100.57506073256488},
+				thailand.location
+			],
+			color : 0x3659cd,
+			width: 1.25
+		} );
+
+
+		// thailand - kenia
+
+		this.addLine( {
+			locations: [ thailand.location, kenia.location ],
+			color : 0xed1717,
+			width: 1.25,
+			offsetFlow: 1,
+			dashed: true,
+			dashSize: 0.4,
+			dashRatio : 0.5,
+			dashOffset : 0.09
+		} );
+
+
+		syncScroll();
+
+	} );
+
+
+	// sunshine from fixed direction
+
+	myearth.addEventListener( "change", function() {
+		this.sunLocation = { lat: this.location.lat + 30, lng: this.location.lng - 40 };
+	} );
+} );
+
+var country_id_state = undefined;
+
+function syncScroll() {
+    var body = document.getElementById("left")
+    var sections = document.querySelectorAll('#left > section')
+    var section_height = body.scrollHeight / sections.length
+    var koef = Math.round(body.scrollTop / section_height, 1.0)
+    var country_id = sections[koef].getAttribute("id")
+
+    if (country_id_state != country_id) {
+        country_id_state = country_id;
+        fetch('https://restcountries.com/v3.1/alpha/' + country_id).then(function (response) {
+            // The API call was successful!
+            if (response.ok) {
+                return response.json();
+            } else {
+                return Promise.reject(response);
+            }
+        }).then(function (data) {
+            // This is the JSON from our response
+            myearth.goTo( { lat: data[0].latlng[0], lng: data[0].latlng[1] }, { duration: 500 } );
+
+        }).catch(function (err) {
+            // There was an error
+            console.warn('Something went wrong.', err);
+        });
+    }
+
+
+
+	{#var lng = getScrollProgress() * -320 - 50;#}
+{##}
+{#	myearth.location = { lat: 12, lng: lng };#}
+
+}
+
+function isNear( lng, marker ) {
+	if ( ! marker ) return false;
+
+	if ( Math.abs( lng - marker.location.lng ) > 180 ) {
+		lng = ( lng < 0 ) ? lng + 360 : lng - 360;
+	}
+
+	return ( lng > marker.location.lng - nearDistance && lng < marker.location.lng + nearDistance );
+}
+
+function showTip() {
+	this.tip.visible = true;
+}
+function hideTip() {
+	this.tip.visible = false;
+}
+
+</script>

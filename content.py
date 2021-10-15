@@ -209,10 +209,20 @@ class GlobalImpactsBlock(blocks.StructBlock):
         template = 'report/includes/global-impacts.html'
 
 
-class GlobalImpactsEarthBlock(blocks.StructBlock):
-    title = RichTextBlock()
-    content_color = RichTextBlock()
-    content = RichTextBlock()
+class GlobalImpactsEarthSectionBlock(blocks.StructBlock):
+    country_id = blocks.CharBlock()
+    country_title = blocks.CharBlock()
+    title = blocks.CharBlock()
+    content = blocks.CharBlock()
+
+    class Meta:
+        icon = 'image'
+        template = 'report/includes/global-impacts-earth-section.html'
+
+
+class GlobalImpactsEarthBlock(blocks.StreamBlock):
+    countries_list = blocks.CharBlock()
+    countries = GlobalImpactsEarthSectionBlock(many=True)
 
     class Meta:
         icon = 'image'
